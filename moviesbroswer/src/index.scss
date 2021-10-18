@@ -1,0 +1,131 @@
+@import './reset';
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+$orange-color:#ff8f71;
+
+
+body{
+    background-color: #15141F;
+    font-family: 'Lato', sans-serif;
+    color: white;
+}
+
+.nav{
+
+    display: flex;
+    position: fixed; 
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #15141F;
+    width: 100%;
+    justify-content: space-evenly; 
+   padding:1vh 0;
+
+    a{
+        color: #3b3b43;
+        &.active{
+            color: $orange-color;
+        }
+        .icone{
+            color:inherit;    
+            
+        }
+    }
+
+}
+
+h1{
+    color: white;
+    font-size: 1.5rem;
+    margin-top: 4vw;
+    span{
+        color: $orange-color;
+    }
+}
+.images {
+    position: relative;
+    border-radius: 2em;
+    margin: 4vh 4vw;
+    height: 25vh;
+    overflow: hidden;
+    img {
+      height: 100%;
+    }
+    .spotlight {
+      display: flex;
+      align-items: center;
+      width: auto;
+      height: 7vh;
+      border-radius: 1em;
+      background-color: #00000070;
+      backdrop-filter: blur(2px);
+      border: 2px solid #00000050;
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      padding-right: 1em;
+      svg {
+        margin-left: 5vw;
+        color: $orange-color;
+      }
+      div {
+        text-size-adjust: auto;
+        margin-left: 5vw;
+        p {
+          font-size: .8em;
+        }
+        h3 {
+          font-size: 1em;
+        }
+      }
+    }
+  }
+
+  .slider {
+    margin: 0;
+    display: flex;
+    img {
+      height: 44vh;
+      margin: 4% 0;
+      border-radius: 2em;
+    }
+  }
+
+.input{
+
+    margin:7% 4vw 0 4vw;
+    position:relative;
+    input{
+       width: 80%;
+       height: 6vh;
+       border-radius: 20px;
+       border: none;
+       background-color: #ffffff10;
+       padding-left: 6vh;
+       color: white;
+    }
+ 
+    svg{
+        position: absolute;
+        left: 4vw;
+        bottom: 1.5vh;
+        margin-left: 4vw;
+    }
+}
+
+.nameGender{
+  display: flex;
+  margin-left: 4vw;
+  overflow: scroll;
+  scrollbar-width: none;
+ 
+  p{
+    padding:2vh 4vh 2vh 0;
+    
+  }
+  &::-webkit-scrollbar{
+    display: none;
+  }
+
+}
+
