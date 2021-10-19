@@ -126,6 +126,34 @@ h1{
   &::-webkit-scrollbar{
     display: none;
   }
-
 }
 
+.conteneurMovieGenre{
+
+  display: flex;
+  flex-wrap: wrap;
+ 
+  
+  .movieGenre {
+    width: 42vw;
+    margin: 1.8vh;
+    .divSize{
+
+      img{
+
+        width:42vw;
+      }
+
+    }
+
+    p {
+      margin-top: 1vh;
+      margin-bottom: 1vh;
+      span {
+        color: grey;
+      }
+    }
+  }
+
+
+}

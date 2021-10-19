@@ -24,7 +24,7 @@ export default function Navbar(){
                     </div>
                 </IconContext.Provider>
             </NavLink>
-            <NavLink to="/detail">           
+            <NavLink to="/profile">           
                 <IconContext.Provider value={icons}>
                     <div>
                         <FaUserAlt />       

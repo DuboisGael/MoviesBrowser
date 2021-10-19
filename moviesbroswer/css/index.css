@@ -181,4 +181,27 @@ h1 span {
 .nameGender::-webkit-scrollbar {
   display: none;
 }
+
+.conteneurMovieGenre {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.conteneurMovieGenre .movieGenre {
+  width: 42vw;
+  margin: 1.8vh;
+}
+
+.conteneurMovieGenre .movieGenre .divSize img {
+  width: 42vw;
+}
+
+.conteneurMovieGenre .movieGenre p {
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+}
+
+.conteneurMovieGenre .movieGenre p span {
+  color: grey;
+}
 /*# sourceMappingURL=index.css.map */

@@ -16,9 +16,8 @@ export  default function Discover() {
     const URL_Genre = "genre/movie/list?";
     const URL_Discover = "discover/movie?";
     const API_URL = BASE_URL + URL_Genre + API_KEY + PARAMS;
-    const API_DISCOVER = BASE_URL + URL_Discover+API_KEY + PARAMS_DISCOVER;
-//    aller rechercher les infos sur l api async = ne pas faire temp que await a pas ete fait
     
+    //    aller rechercher les infos sur l api async = ne pas faire temp que await a pas ete fait
     async function moviePromise(URL) {
         return await axios.get(URL)
     }
@@ -26,7 +25,8 @@ export  default function Discover() {
     const [gender, setGender]=React.useState(28);
     const [moviegenre, setMovieGenre]=React.useState([]);
     const [Bygender, setByGender]=React.useState([]);
-
+    
+    const API_DISCOVER = BASE_URL + URL_Discover+API_KEY + PARAMS_DISCOVER + gender;
     useEffect(()=>{
 
         async function fetchMovie(){
@@ -40,29 +40,23 @@ export  default function Discover() {
             setByGender(movieGenreData.data.results)
         }
         fetchMovie()
-    },[])
+    },[gender])
 
     //<-------------------------------------------------------------------------------------->
    
   
     // module pour afficher les genre
-    
-
     function NavGender(){
         function changeGender(e){
-            // prevent enpeche le rechargerment de la page 
-           
+            // prevent enpeche le rechargerment de la page     
             e.preventDefault()
-           
             // au click on recup l'id et on set le gender
-
             setGender(e.target.id)
            
         }
         return(
             
             // afficher les genre
-
             moviegenre.map((genre)=>{
 
                 return(
@@ -79,9 +73,6 @@ export  default function Discover() {
     //<----------------------------------------------------------------------------------------->
   
     // module pour afficher les film selon l'id
-
-
-
     function MoviesView(){
 
         return(
@@ -91,9 +82,9 @@ export  default function Discover() {
 
                     <div className="movieGenre" key={movie.id}>
                         <div className="divSize">
-                            <img src={"https://image.tmdb.org/t/p/w400" + movie.poster_path} alt={movie.title}/>
+                            <img src={"https://image.tmdb.org/t/p/w400" + movie.poster_path} alt={movie.title} />
                         </div>
-                        <p>{movie.title} <span>({movie.release_date.split('-')[0]})</span></p>
+                        <p>{movie.title} <span>({movie.release_date && movie.release_date.split('-')[0]})</span></p>
                     </div>
                 )
             })
@@ -101,9 +92,6 @@ export  default function Discover() {
         )
 
     }
-
-
-
 
     //<--------------------------------------------------------------------------------------------->
     return(
@@ -121,7 +109,7 @@ export  default function Discover() {
             <nav className='nameGender'>
                 <NavGender />
             </nav>
-            <div>
+            <div className="conteneurMovieGenre">
             <MoviesView />
             </div>
         </div>

@@ -49,8 +49,10 @@ export default function Home(props){
                 children={Slider()}
                 pagination={false}
                 showArrows={false}
-                breakPoints={[{"width": 100}]}                         enableAutoPlay={true}
+                breakPoints={[{"width": 100}]}                        
+                 enableAutoPlay={true}
             />
+            
             </div>
         </div>
     );

@@ -11,6 +11,7 @@ import Home from './Homepage';
 import Detail from './Detailpage';
 import Discover from './Discoverpage';
 import axios from 'axios';
+import Navbar from './nav';
 
 function App() {
   const API_KEY = "api_key=47fae463820cf95a65aad6491a78ce07"
@@ -44,6 +45,10 @@ React.useEffect(async() =>{
                     </Route>
                     <Route path="/home">
                     <Home movies={movies}/>
+                    </Route>
+                    <Route path="/profile">
+                    <Navbar />
+                      <p>Profile</p>
                     </Route>
                     <Route path="/">
                     <Redirect to ="/home" />
